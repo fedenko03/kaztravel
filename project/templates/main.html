@@ -48,38 +48,92 @@
         }
         .main-part {
             animation: main-part 2s;
-            background-image: url("{% static "/images/mountainsr2.png" %}");
+            background-image: url("{% static "/mountainsr.png" %}");
             background-repeat: no-repeat;
             background-size: cover;
         }
         @keyframes main-part {
             from {opacity: 0;} to {opacity: 1;}
         }
+        .mdopinfo{
+            padding-top: 5em;
+        }
+        .mindent{
+            padding-bottom: 27em
+        }
+
+        @media screen and (max-width: 992px) {
+
+            body{
+                padding-top: 170px;
+            }
+            .mtext{
+                font-size:15px;
+            }
+            .mdopinfo{
+                padding-top: 10px;
+            }
+            .mindent{
+                padding-bottom: 2em
+            }
+        }
+
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-thumb{
             background: #008dff;
         }
-        .mdopinfo{
-            padding-top: 5px;
+
+        .circles li:nth-child(1){
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
         }
-        .mindent{
-            padding-bottom: 27em
+        footer{
+            width: 100%;
+            height: 205px;
+            background: black;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 25px;
+        }
+        footer a{
+            color: white;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        footer nav a:hover{
+            border-bottom: 1px white;
+        }
+        #logo{
+            color: white;
+        }
+        .logo{
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        #icons{
+            margin-top: 10px;
+            color: white;
+            height: 30px;
+            width: 30px;
+            margin-left: 15px;
+        }
+
+        #icons:hover{
+            background: #494949;
+            border-radius: 10%;
+        }
+        footer p{
+            color: white;
         }
 
     </style>
 
 </head>
 <body>
-
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="down" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-    </symbol>
-</svg>
 
 <header class='menu shadow'>
     <div class="container">
@@ -109,14 +163,12 @@
         <h1 class="border-bottom t-white" style="text-align: center;font-family:'Montserrat', sans-serif;font-size:4em;font-weight: bold;padding-bottom: 1em;">KazTravel</h1>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
             <div class="feature col">
-                <img class="image" style="width: 70%; border-radius: 10px" src="{% static "images/pic1.jpg" %}">
-                <h2 class="t-white mtext" style="margin-top: 5px">Tourism in Kazakhstan</h2>
+                <h2 class="t-white mtext">Tourism in Kazakhstan</h2>
                 <p class="t-white lead mtext">Due to the abundance of resources and locations, Kazakhstan has developed many types of tourism: entertainment, cultural and educational, environmental, sports, wellness. Tourism in Kazakhstan involves a wide variety of routes.</p>
             </div>
 
             <div class="feature col">
-                <img class="image" style="width: 70%; border-radius: 10px" src="{% static "images/pic3.jpg" %}">
-                <h2 class="t-white mtext" style="margin-top: 5px">Thanks to our service </h2>
+                <h2 class="t-white mtext">Thanks to our service </h2>
                 <p class="t-white lead mtext">It will be easier for people to learn about interesting places in our vast country</p>
             </div>
 
@@ -127,12 +179,38 @@
             <a href="#"><svg class="down mx-auto d-block bounce" width="1em" height="1em" style=""><use xlink:href="#down"/></svg></a>
         </div>
     </div>
+    <section class="mindent" style="padding-bottom: 30em"></section>
 </section>
 
 <!-- Optional JavaScript; choose one of the two! -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="{% static "js/main_page.js" %}"></script>
+
+<!-- Initial version of footer-->
+
+<footer>
+    <nav>
+        <a href="#" >About us</a>
+        <a href="#"  >How to use our service?</a>
+        <a href="#"  >Features</a>
+    </nav>
+    <div class="logo">
+        <a id="logo">Logo KazTravel</a>
+    </div>
+    <div class="social">
+        <ion-icon name="logo-facebook" id="icons"></ion-icon>
+        <ion-icon name="logo-vk" id="icons"></ion-icon>
+        <ion-icon name="logo-instagram" id="icons"></ion-icon>
+        <ion-icon name="logo-google" id="icons"></ion-icon>
+    </div>
+    <p>Travelers. 2022</p>
+</footer>
+
+<!-- icon packages -->
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
