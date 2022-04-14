@@ -1,0 +1,144 @@
+body{
+    background-color: ghostwhite;
+}
+.menu{
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    z-index:20;
+
+}
+.t-white{
+    color: white;
+}
+.down{
+    color: #fff;
+    font-size: 50px;
+    fill: currentColor;
+}
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+.main-part {
+    animation: main-part 0.5s;
+    background: linear-gradient(transparent 5px, #014ab7), url("../images/mountainsr2.png") no-repeat;
+    background-size: cover;
+}
+@keyframes main-part {
+    from {opacity: 0;} to {opacity: 1;}
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background: #008dff;
+}
+.mdopinfo{
+    padding-top: 5px;
+}
+.mindent{
+    padding-bottom: 27em
+}
+footer{
+    width: 100%;
+    height: 205px;
+    background: black;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 25px;
+}
+footer a{
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+}
+footer nav a:hover{
+    border-bottom: 1px white;
+}
+#logo{
+    color: white;
+}
+.logo{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#icons{
+    margin-top: 10px;
+    color: white;
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+}
+
+#icons:hover{
+    background: #494949;
+    border-radius: 10%;
+}
+footer p{
+    color: white;
+}
+.whitetxt {
+    color: white;
+}
+
+.feature_color{
+    color: #fff;
+    fill: currentColor;
+}
+
+/* маркированный список */
+.list-counter-circle {
+    list-style: none;
+    counter-reset: list;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.list-counter-circle>li {
+    position: relative;
+    display: block;
+    height: 2rem;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-left: 1.75rem;
+    margin-bottom: .25rem;
+    padding-left: 1rem;
+    padding-right: .5rem;
+    color: #014ab7;
+    background: white;
+    white-space: nowrap;
+    border-radius: .80rem
+}
+.list-counter-circle>li:last-child {
+    margin-bottom: 0;
+}
+.list-counter-circle>li::before {
+    content: counter(list);
+    counter-increment: list;
+    position: absolute;
+    left: -2rem;
+    top: -.25rem;
+    bottom: -.25rem;
+    width: 2.5rem;
+    line-height: 2rem;
+    border-radius: 1.25rem;
+    border: .25rem solid #014ab7;
+    text-align: center;
+    color: #014ab7;
+    background: white;
+}
+
+/**/
