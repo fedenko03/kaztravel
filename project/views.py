@@ -7,3 +7,6 @@ def main(request):
 def login(request):
     return render(request, 'login.html')
 
+def register_attempt(request):
+    return render(request, 'register.html')
+
