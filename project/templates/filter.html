@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{% static "css/main_page.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "css/filter_page.css" %}" rel="stylesheet" type="text/css">
+    <title>KazTravel</title>
+
+</head>
+<body>
+    <header class='menu shadow'>
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
+                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    logo KazTravel
+                </a>
+    
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#about_us" class="nav-link px-2 link-dark" id="el1">About us</a></li>
+                    <li><a href="#how_to_use_our_service" class="nav-link px-2 link-dark" id="el2">How to use our service?</a></li>
+                    <li><a href="#features" class="nav-link px-2 link-dark" id="el3">Features</a></li>
+                    <li><a href="#prices" class="nav-link px-2 link-dark" id="el4">Prices</a></li>
+                </ul>
+    
+                <div class="col-md-3 text-end">
+                    <a href="/login/"  class="btn btn-outline-primary me-2">Login</a>
+                    <a href="#" class="btn btn-primary">Sign-up</a>
+                </div>
+            </header>
+        </div>
+    </header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li data-f="all">All</li>
+                <li data-f="hotels" class="text-hotels">Hotels</li>
+                <li data-f="museum" class="text-museum">Museum</li>
+                <li data-f="parks" class="text-parks">Parks</li>
+                <li data-f="shops" class="text-shops">Shops</li>
+            </ul>
+        </nav>
+    </div>
+        <div class="block-cover">
+            <div class="col-auto box hotels">
+                <div class="product">
+                    <div class="image">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>HOTEL</h3>
+                        <div class="info-price">
+                            <span class="price">hotel</span>
+                            <span class="city">Nur-Sultan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto box museum">
+                <div class="product">
+                    <div class="image">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>MUSEUM</h3>
+                        <div class="info-price">
+                            <span class="price">museum</span>
+                            <span class="city">Nur-Sultan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto box parks">
+                <div class="product">
+                    <div class="image">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>PARK</h3>
+                        <div class="info-price">
+                            <span class="price">park</span>
+                            <span class="city">Nur-Sultan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto box shops">
+                <div class="product">
+                    <div class="image">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>SHOP</h3>
+                        <div class="info-price">
+                            <span class="price">shop</span>
+                            <span class="city">Nur-Sultan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto box hotels">
+                <div class="product">
+                    <div class="image">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>HOTEL</h3>
+                        <div class="info-price">
+                            <span class="price">hotel</span>
+                            <span class="city">Nur-Sultan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto box museum">
+                <div class="product">
+                    <div class="image">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>MUSEUM</h3>
+                        <div class="info-price">
+                            <span class="price">museum</span>
+                            <span class="city">Nur-Sultan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto box parks">
+                <div class="product">
+                    <div class="image">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>PARK</h3>
+                        <div class="info-price">
+                            <span class="price">park</span>
+                            <span class="city">Nur-Sultan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto box shops">
+                <div class="product">
+                    <div class="image">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>SHOP</h3>
+                        <div class="info-price">
+                            <span class="price">shop</span>
+                            <span class="city">Nur-Sultan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <script src="{% static "js/filter_page.js" %}"></script>
+</body>
+</html>

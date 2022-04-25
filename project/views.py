@@ -10,3 +10,6 @@ def login(request):
 def register_attempt(request):
     return render(request, 'register.html')
 
+def filter(request):
+    return render(request, 'filter.html')
+
