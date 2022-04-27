@@ -14,153 +14,59 @@
 
 </head>
 <body>
-    <header class='menu shadow'>
-        <div class="container">
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
-                <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                    logo KazTravel
-                </a>
-    
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#about_us" class="nav-link px-2 link-dark" id="el1">About us</a></li>
-                    <li><a href="#how_to_use_our_service" class="nav-link px-2 link-dark" id="el2">How to use our service?</a></li>
-                    <li><a href="#features" class="nav-link px-2 link-dark" id="el3">Features</a></li>
-                    <li><a href="#prices" class="nav-link px-2 link-dark" id="el4">Prices</a></li>
-                </ul>
-    
-                <div class="col-md-3 text-end">
-                    <a href="/login/"  class="btn btn-outline-primary me-2">Login</a>
-                    <a href="#" class="btn btn-primary">Sign-up</a>
-                </div>
-            </header>
-        </div>
-    </header>
+<header class='menu shadow'>
     <div class="container">
-        <nav>
-            <ul>
-                <li data-f="all">All</li>
-                <li data-f="hotels" class="text-hotels">Hotels</li>
-                <li data-f="museum" class="text-museum">Museum</li>
-                <li data-f="parks" class="text-parks">Parks</li>
-                <li data-f="shops" class="text-shops">Shops</li>
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
+            <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                logo KazTravel
+            </a>
+    
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#about_us" class="nav-link px-2 link-dark" id="el1">About us</a></li>
+                <li><a href="#how_to_use_our_service" class="nav-link px-2 link-dark" id="el2">How to use our service?</a></li>
+                <li><a href="#features" class="nav-link px-2 link-dark" id="el3">Features</a></li>
+                <li><a href="#prices" class="nav-link px-2 link-dark" id="el4">Prices</a></li>
             </ul>
-        </nav>
+    
+            <div class="col-md-3 text-end">
+                <a href="/login/"  class="btn btn-outline-primary me-2">Login</a>
+                <a href="#" class="btn btn-primary">Sign-up</a>
+            </div>
+        </header>
     </div>
-        <div class="block-cover">
-            <div class="col-auto box hotels">
-                <div class="product">
-                    <div class="image">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="info">
-                        <h3>HOTEL</h3>
-                        <div class="info-price">
-                            <span class="price">hotel</span>
-                            <span class="city">Nur-Sultan</span>
-                        </div>
-                    </div>
-                </div>
+</header>
+<div class="container">
+    <nav>
+        <ul>
+            <li data-f="all">All</li>
+            <li data-f="hotels" class="text-hotels">Hotels</li>
+            <li data-f="museum" class="text-museum">Museum</li>
+            <li data-f="parks" class="text-parks">Parks</li>
+            <li data-f="shops" class="text-shops">Shops</li>
+        </ul>
+    </nav>
+</div>
+<div class="block-cover">
+
+    {% for i in places.all %}
+    <div class="col-auto box {{ i.type }}s">
+        <div class="product">
+            <div class="image">
+                <img src="{{MEDIA_URL}}{{ i.pic.url}}" alt="">
             </div>
-            <div class="col-auto box museum">
-                <div class="product">
-                    <div class="image">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="info">
-                        <h3>MUSEUM</h3>
-                        <div class="info-price">
-                            <span class="price">museum</span>
-                            <span class="city">Nur-Sultan</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-auto box parks">
-                <div class="product">
-                    <div class="image">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="info">
-                        <h3>PARK</h3>
-                        <div class="info-price">
-                            <span class="price">park</span>
-                            <span class="city">Nur-Sultan</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-auto box shops">
-                <div class="product">
-                    <div class="image">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="info">
-                        <h3>SHOP</h3>
-                        <div class="info-price">
-                            <span class="price">shop</span>
-                            <span class="city">Nur-Sultan</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-auto box hotels">
-                <div class="product">
-                    <div class="image">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="info">
-                        <h3>HOTEL</h3>
-                        <div class="info-price">
-                            <span class="price">hotel</span>
-                            <span class="city">Nur-Sultan</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-auto box museum">
-                <div class="product">
-                    <div class="image">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="info">
-                        <h3>MUSEUM</h3>
-                        <div class="info-price">
-                            <span class="price">museum</span>
-                            <span class="city">Nur-Sultan</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-auto box parks">
-                <div class="product">
-                    <div class="image">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="info">
-                        <h3>PARK</h3>
-                        <div class="info-price">
-                            <span class="price">park</span>
-                            <span class="city">Nur-Sultan</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-auto box shops">
-                <div class="product">
-                    <div class="image">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="info">
-                        <h3>SHOP</h3>
-                        <div class="info-price">
-                            <span class="price">shop</span>
-                            <span class="city">Nur-Sultan</span>
-                        </div>
-                    </div>
+            <div class="info">
+                <h3>{{ i.name }}</h3>
+                <div class="info-price">
+                    <span class="price">{{ i.price }}</span>
+                    <span class="city">{{ i.city }}</span>
                 </div>
             </div>
         </div>
+    </div>
+    {% endfor %}
+
+</div>
             
-        <script src="{% static "js/filter_page.js" %}"></script>
+<script src="{% static "js/filter_page.js" %}"></script>
 </body>
 </html>
