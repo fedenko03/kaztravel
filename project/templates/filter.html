@@ -22,15 +22,19 @@
             </a>
     
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#about_us" class="nav-link px-2 link-dark" id="el1">About us</a></li>
-                <li><a href="#how_to_use_our_service" class="nav-link px-2 link-dark" id="el2">How to use our service?</a></li>
-                <li><a href="#features" class="nav-link px-2 link-dark" id="el3">Features</a></li>
-                <li><a href="#prices" class="nav-link px-2 link-dark" id="el4">Prices</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark" id="el1">Places</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark" id="el2">Rating</a></li>
             </ul>
     
             <div class="col-md-3 text-end">
-                <a href="/login/"  class="btn btn-outline-primary me-2">Login</a>
-                <a href="#" class="btn btn-primary">Sign-up</a>
+
+                <img style="margin-left: 15px;" src="{% static "images/user.webp" %}" alt="" width="32" height="32"  class="rounded-circle me-2">
+                <strong style="margin-right: 15px;font-size: 19px">{{ request.user }}</strong>
+
+                {% url 'logout_user' as url_logout_user %}
+                <a href="{{ url_logout_user }}" class="btn btn-danger">
+                    Log out
+                </a>
             </div>
         </header>
     </div>
