@@ -18,13 +18,17 @@ class Profile(models.Model):
 Type = [
     ('hotel', 'hotel'),
     ('park', 'park'),
-    ('museum', 'museum')
+    ('museum', 'museum'),
+    ('shop', 'shop')
 ]
 
 City = [
     ('Nur-Sultan', 'Nur-Sultan'),
     ('Almaty', 'Almaty'),
-    ('Aktobe', 'Aktobe')
+    ('Aktobe', 'Aktobe'),
+    ('Almaty obl', 'Almaty obl'),
+    ('Atyrau', 'Atyrau'),
+    ('Kostanay', 'Kostanay')
 ]
 
 class Places(models.Model):

@@ -1,11 +1,15 @@
 import uuid
 
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render, HttpResponse
 from .models import *
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import FormMixin
+from django.urls import reverse_lazy, reverse
 
 def main(request):
     return render(request, 'main.html')
@@ -85,13 +89,22 @@ def send_mail_after_registration(email, token, nick):
     send_mail(subject, message, email_from, recipient_list)
 
 
+@login_required(login_url='/login/')
+def rating(request):
+    template = 'rating.html'
+    context = {
+        'list_places': Places.objects.all().order_by('-id')[:5]
+    }
+    return render(request, template, context)
+
+
+@login_required(login_url='/login/')
 def filter(request):
     template = 'filter.html'
     context = {
         'places': Places.objects.all()
     }
     return render(request, template, context)
-
 
 def token_send(request):
     if request.user.is_authenticated:
