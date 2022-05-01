@@ -13,3 +13,6 @@ def register_attempt(request):
 def filter(request):
     return render(request, 'filter.html')
 
+def description(request):
+    return render(request, 'description.html')
+

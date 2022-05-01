@@ -1,0 +1,48 @@
+.first {
+    height: 300px;
+    width: 500px;
+    border-radius: 10px;
+}
+
+.image {
+    margin-top: 150px;
+    margin-left: 450px;
+}
+
+.header {
+    font-size: 30px;
+    margin-top: 40px;
+    font-weight: 500;
+}
+
+.text {
+    margin-right: 445px;
+}
+
+.second {
+    margin-top: -153px;
+    height: 147px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.third {
+    margin-left: -304px;
+    margin-top: 154px;
+    height: 147px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.type {
+    color: gray;
+    margin-top: -20px;
+}
+
+.price {
+    color: black;
+    margin-left: 690px;
+    margin-top: -45px;
+    font-size: 20px;
+    font-weight: 600;
+}
