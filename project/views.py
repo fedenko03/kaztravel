@@ -123,3 +123,6 @@ def verify(request, auth_token):
         print(e)
         return redirect('/filter')
 
+def description(request):
+    return render(request, 'description.html')
+
