@@ -72,6 +72,7 @@
           <div>
             <img class="rounded img-fluid shadow w-100 fit-cover" src="{{MEDIA_URL}}{{ i.pic.url}}" style="height: 250px;">
             <div class="py-4">
+              <span class="fs-5 fw-light text-primary d-xxl-flex justify-content-xxl-end" style="width: 412px;text-align: right;height: 0px;padding: 0px;transform: perspective(0px) scale(0.97);">{{ i.price }}</span>
               <span class="badge bg-primary mb-2">{{ i.city }}</span>
               <span class="badge bg-primary mb-2">{{ i.type }}</span>
               <h4 class="fw-bold">{{ i.name }}</h4>
@@ -98,8 +99,9 @@
           </ul>
         </div>
         <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
-          <h3 class="fs-6 fw-bold">Places</h3>
+          <h3 class="fs-6 fw-bold">Other</h3>
           <ul class="list-unstyled">
+            <li><a href="#">Places</a></li>
             <li><a href="#">Rating</a></li>
             <li><a href="#">My profile</a></li>
           </ul>

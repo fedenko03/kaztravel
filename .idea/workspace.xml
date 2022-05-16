@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c669d070-3a7c-4792-8fbe-a4ea82ed49f1" name="Changes" comment="Replenishment of the database. Adding a rating and a small change in the operation of filters">
-      <change afterPath="$PROJECT_DIR$/project/static/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/static/css/places.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/static/images/lelogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/templates/filter1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/static/css/filter_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/css/filter_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/static/js/filter_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/js/filter_page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/filter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +82,7 @@
       <workItem from="1652012234656" duration="305000" />
       <workItem from="1652608071231" duration="718000" />
       <workItem from="1652613851638" duration="17000" />
-      <workItem from="1652670335549" duration="25602000" />
+      <workItem from="1652670335549" duration="26533000" />
     </task>
     <task id="LOCAL-00001" summary="continuing work on the database and the places page">
       <created>1651055924829</created>
