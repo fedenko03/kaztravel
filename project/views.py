@@ -93,7 +93,7 @@ def send_mail_after_registration(email, token, nick):
 def rating(request):
     template = 'rating.html'
     context = {
-        'list_places': Places.objects.all().order_by('-id')[:5]
+        'list_places': Places.objects.all().order_by('-id')[:10]
     }
     return render(request, template, context)
 

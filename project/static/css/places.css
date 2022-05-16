@@ -1,0 +1,69 @@
+.text-lim{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      line-clamp: 4;
+      box-orient: vertical;
+}
+
+.box {
+    border-radius: 5px;
+    box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
+    height: 350px;
+    width: 350px;
+    margin: 15px;
+    border-width: 3px;
+    float: left;
+}
+
+.cursor-link {
+      cursor: pointer;
+}
+
+
+.image img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 150px;
+    width: 90%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.hide {
+    opacity: 1;
+    animation-name: a1;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+.hidecity {
+    opacity: 1;
+    animation-name: a1;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes a1 {
+    to {
+        opacity: 0;
+        height: 0;
+        width: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background: #008dff;
+}
+

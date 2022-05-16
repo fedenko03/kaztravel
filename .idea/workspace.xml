@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c669d070-3a7c-4792-8fbe-a4ea82ed49f1" name="Changes" comment=".">
+    <list default="true" id="c669d070-3a7c-4792-8fbe-a4ea82ed49f1" name="Changes" comment="Replenishment of the database. Adding a rating and a small change in the operation of filters">
+      <change afterPath="$PROJECT_DIR$/project/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/css/places.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/images/lelogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/filter1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/migrations/0002_alter_places_pic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/static/css/filter_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/css/filter_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/description.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/static/js/filter_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/js/filter_page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/filter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +25,23 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
   </component>
   <component name="ProjectId" id="28Eo8nDUAOweTesIWRpbDqKnX7V" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -40,7 +54,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Snake_Game_AITU" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -68,6 +83,16 @@
       <workItem from="1651251520026" duration="1702000" />
       <workItem from="1651335757613" duration="8261000" />
       <workItem from="1651420246394" duration="336000" />
+      <workItem from="1651426630655" duration="222000" />
+      <workItem from="1651558871104" duration="2622000" />
+      <workItem from="1651587020815" duration="981000" />
+      <workItem from="1651592645210" duration="4000" />
+      <workItem from="1651657954891" duration="2000000" />
+      <workItem from="1651993593882" duration="228000" />
+      <workItem from="1652012234656" duration="305000" />
+      <workItem from="1652608071231" duration="718000" />
+      <workItem from="1652613851638" duration="17000" />
+      <workItem from="1652670335549" duration="25602000" />
     </task>
     <task id="LOCAL-00001" summary="continuing work on the database and the places page">
       <created>1651055924829</created>
@@ -84,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651345132010</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Replenishment of the database. Adding a rating and a small change in the operation of filters">
+      <created>1651426507555</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651426507555</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +138,7 @@
     <MESSAGE value="continuing work on the database and the places page" />
     <MESSAGE value="Added registration. autorization, and etc. Some fix." />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Replenishment of the database. Adding a rating and a small change in the operation of filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replenishment of the database. Adding a rating and a small change in the operation of filters" />
   </component>
 </project>

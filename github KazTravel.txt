@@ -1,0 +1,1 @@
+Our project has a size above 40mb and is not uploaded to the moodle, so we attach a link to the github - https://github.com/fedenko03/kaztravel

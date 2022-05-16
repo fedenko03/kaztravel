@@ -4,4 +4,8 @@ from project.models import Profile, Places
 
 
 admin.site.register(Profile)
-admin.site.register(Places)
+
+@admin.register(Places)
+class PersonAdmin(admin.ModelAdmin):
+    list_display = ("name", "type", "city")
+    search_fields = ("name__startswith",)
