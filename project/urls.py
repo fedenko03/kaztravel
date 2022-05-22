@@ -21,8 +21,8 @@ urlpatterns = [
     path('profile', profile, name='profile'),
     path('recommendations', recommendations, name="recommendations"),
     path('rating', rating, name='rating'),
-    # path('error', e)
-    # path('recovery', recovery, name="recovery"),
+    path('recovery', recovery, name="recovery"),
+    path('recovery/<auth_token>', recovery_confirm, name="recovery_confirm"),
 ]
 
 if settings.DEBUG:

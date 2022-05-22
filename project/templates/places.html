@@ -79,7 +79,7 @@
       <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
 
         {% for i in places.all %}
-        <div class="card-places col mb-4 title-place {{ i.type }}s {{ i.city }}" style="filter: blur(0px) brightness(100%);">
+        <div class="card-anim card-places col mb-4 title-place {{ i.type }}s {{ i.city }}" style="filter: blur(0px) brightness(100%);">
           <div>
             <img class="rounded img-fluid shadow w-100 fit-cover" src="{{MEDIA_URL}}{{ i.pic.url}}" style="height: 250px;">
             <div class="py-4">

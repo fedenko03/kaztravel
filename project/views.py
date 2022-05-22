@@ -132,6 +132,63 @@ def verify(request, auth_token):
         print(e)
         return redirect('/places')
 
+def send_mail_recovery(email, token, nick):
+    subject = '[KazTravel] Password Recovery'
+    message = f'{nick}, To restore your password, follow the link: \n\nhttp://127.0.0.1:8000/recovery/{token}\nIf it wasn\'t you, don\'t follow the link!'
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [email]
+    send_mail(subject, message, email_from, recipient_list)
+
+
+def recovery(request):
+    if request.user.is_authenticated:
+        return redirect('/places')
+    message = ''
+    if request.method == "POST":
+        username = request.POST.get('username')
+
+        user_obj = User.objects.filter(username=username).first()
+        if user_obj is None:
+            message = 'User not found.'
+        else:
+            password_token = str(uuid.uuid4())
+            profile_obj = Profile.objects.filter(username=username).first()
+            profile_obj.auth_token = password_token
+            profile_obj.save()
+            send_mail_recovery(user_obj.email, password_token, username)
+            messages.success(request, 'A link has been sent to your email address.')
+            return redirect('/login')
+
+    context = {
+        'profile': Profile.objects.filter(username=request.user.username).first(),
+        'message': message
+    }
+    return render(request, 'recovery.html', context)
+
+
+def recovery_confirm(request, auth_token):
+    try:
+        profile_obj = Profile.objects.filter(auth_token=auth_token).first()
+        if profile_obj:
+            letters = string.ascii_lowercase + string.digits
+            new_password = ''.join(random.choice(letters) for i in range(8))
+            profile_obj.auth_token = str(uuid.uuid4())
+            profile_obj.save()
+
+            user_obj = User.objects.get(username=profile_obj.username)
+            user_obj.set_password(new_password)
+            user_obj.save()
+            context = {
+                'new_password': new_password
+            }
+            return render(request, 'recovery-confirm.html', context)
+        else:
+            messages.success(request, 'ERROR! Try again.')
+            return redirect('/login')
+    except Exception as e:
+        messages.success(request, 'ERROR! Try again.')
+        return redirect('/login')
+
 
 def token_send(request):
     if request.user.is_authenticated:
@@ -162,7 +219,7 @@ def send_email_after_registration(email, token, nick):
 def rating(request):
     template = 'rating.html'
     context = {
-        'list_places': Places.objects.all().order_by('-id')[:10],
+        'list_places': Places.objects.all().order_by('-visits')[:10],
         'profile': Profile.objects.filter(username=request.user.username).first()
     }
     return render(request, template, context)
@@ -248,6 +305,8 @@ def profile(request):
 @login_required(login_url='/login/')
 def place_detail(request, pk):
     place = get_object_or_404(Places, id=pk)
+    place.visits += 1
+    place.save()
     comment = Comments.objects.filter(place=pk)
     hasCommented = False
 
@@ -318,82 +377,6 @@ def favorite(request, pk):
         return redirect(place_detail, pk)
     except Exception as e:
         raise e
-
-
-
-
-# @login_required(login_url='/login/')
-# class PlacesDetailView(DetailView):
-#     model = Places
-#     template_name = 'page.html'
-#     context_object_name = 'place'
-
-
-# def page(request, pk):
-#     place = get_object_or_404(Places, id=pk)
-#     comment = Comments.objects.filter(place=pk)
-#     if request.method == "POST":
-#         form = CommentForm(request.POST)
-#         if form.is_valid():
-#             form = form.save(commit=False)
-#             form.author = request.user
-#             form.place = place
-#             form.save()
-#             return redirect(page, pk)
-#     else:
-#         form = CommentForm()
-#
-#     try:
-#         b, _ = Favorite.objects.get_or_create(user=request.user)
-#         if b.places.filter(id=pk).exists():
-#             isfavorites = 1
-#         else:
-#             isfavorites = 0
-#     except Exception as e:
-#         isfavorites = 0
-#
-#
-#     return render(request, "page.html",
-#                   {"place": place,
-#                    "comments": comment,
-#                    "isfavorites": isfavorites,
-#                    "form": form})
-
-
-# def send_mail_recovery(email, token, nick):
-#     subject = '[KazTravel] Password Recovery'
-#     message = f'{nick}, To restore your password, follow the link: \n\nhttp://127.0.0.1:8000/recovery{token}\nIf it wasn\'t you, don\'t follow the link!'
-#     email_from = settings.EMAIL_HOST_USER
-#     recipient_list = [email]
-#     send_mail(subject, message, email_from, recipient_list)
-
-
-# def recovery(request):
-#     if request.user.is_authenticated:
-#         return redirect('/filter')
-#     message = ''
-#     if request.method == "POST":
-#         username = request.POST.get('username')
-#
-#         user_obj = User.objects.filter(username=username).first()
-#         if user_obj is None:
-#             message = 'User not found.'
-#         else:
-#             letters = string.ascii_lowercase + string.digits
-#             new_password = ''.join(random.choice(letters) for i in range(8))
-#             password_token = str(uuid.uuid4())
-#             profile_obj = Profile.objects.filter(username=request.user.username).first()
-#             profile_obj.password_token = str(uuid.uuid4())
-#             profile_obj.save()
-#             send_mail_after_registration(email, auth_token, username)
-#             messages.success(request, 'A new password has been sent to your email address.')
-#             return redirect('/login')
-#
-#     context = {
-#         'profile': Profile.objects.filter(username=request.user.username).first(),
-#         'message': message
-#     }
-#     return render(request, 'recovery.html', context)
 
 
 

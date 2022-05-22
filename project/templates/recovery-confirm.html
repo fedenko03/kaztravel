@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
 <nav class="navbar navbar-light navbar-expand-md fixed-top navbar-shrink py-3" id="mainNav">
     <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span
             class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg
@@ -38,46 +37,20 @@
     </div>
 </nav>
 
- <section class="py-5 mt-5">
-    <div class="container">
 
+<section class="py-5 mt-5">
+    <div class="container py-5">
+      <div class="border rounded d-flex flex-column justify-content-between align-items-center flex-lg-row bg-primary-gradient p-4 p-lg-5" style="background: #c7e1ff;">
         <div class="col-md-8 col-xl-6 text-center mx-auto">
-        <h2>Password Recovery<br></h2>
-        <p class="w-lg-50">Enter your username and we will send you a recovery email</p>
-      </div>
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6 col-xl-4">
-          <div class="card mb-5">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
-                  class="bi bi-question-lg">
-                  <path fill-rule="evenodd"
-                    d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14Z">
-                  </path>
-                </svg></div>
-              <form class="text-center" method="post">
-                  {% csrf_token %}
-                <div class="mb-3">
-
-                    {% if message %}
-                  <div class="alert alert-warning" role="alert"><span><strong>{{message}}</strong></span></div>
-                    {% endif %}
-
-                  <input class="form-control" type="text" placeholder="Username" name="username">
-
-                </div>
-                <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Get a recovery link</button></div>
-                <p class="text-muted">Did you find the password?<strong>&nbsp;</strong><a
-                    href="http://127.0.0.1:8000/login/"><strong>Log in</strong></a><br></p>
-              </form>
-            </div>
-          </div>
+          <h3 class="fw-bold text-dark" style="padding-bottom: 13px;">Your temporary password:</h3>
+            <input class="border rounded-pill shadow-sm form-control-lg" type="text" name="Password" placeholder="Password" style="text-align: center;" disabled value="{{new_password}}">
+          <p class="mb-0" style="padding-top: 14px;">To change your password, go to <a href="/profile"><b>settings</b></a> after logging in to your account
+              <a href="/login" class="btn btn-primary shadow" type="button" style="margin-top: 15px;">Okay, thanks!</a>
+          </p>
         </div>
       </div>
     </div>
   </section>
-
 
 
 <footer class="bg-primary-gradient">

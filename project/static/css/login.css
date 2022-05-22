@@ -4,3 +4,11 @@
 ::-webkit-scrollbar-thumb{
     background: #008dff;
 }
+
+.password-txt:hover{
+    color: #0c3ee1;
+}
+
+.password-txt{
+    color: #131313;
+}

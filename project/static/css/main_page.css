@@ -141,4 +141,9 @@ footer p{
     background: white;
 }
 
-/**/
+.section-line {
+    background-image: url("../images/pic4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 200px
+}

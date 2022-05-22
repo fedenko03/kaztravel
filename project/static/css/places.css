@@ -75,3 +75,8 @@
     background: #008dff;
 }
 
+.card-anim:hover {
+    transform: scale(1.02);
+    display: inline;
+}
+

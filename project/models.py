@@ -43,6 +43,7 @@ class Places(models.Model):
     type = models.CharField(verbose_name='Type', choices=Type, max_length=40)
     recommend_1 = models.BooleanField(default=False)
     recommend_2 = models.BooleanField(default=False)
+    visits = models.IntegerField(default=0)
     pic = ImageField(verbose_name='Picture', null=True, blank=True, max_length=100, upload_to='images/places')
 
     def __str__(self):
