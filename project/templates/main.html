@@ -8,9 +8,10 @@
     <!-- Bootstrap CSS -->
     {% load static %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="{% static "css/main_page.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/main_page.css' %}" rel="stylesheet" type="text/css">
+     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
     <title>KazTravel</title>
-
+<link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
 </head>
 <body>
 
@@ -51,27 +52,36 @@
     </symbol>
 </svg>
 
-<header class='menu shadow'>
-    <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
-            <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img class="image" style="width: 20%; border-radius: 10px" src="{% static "images/lelogo.png" %}">
-            </a>
+  <nav class="navbar navbar-light navbar-expand-md fixed-top navbar-shrink py-3" id="mainNav">
+    <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span
+          class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg
+            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+            class="bi bi-brightness-alt-high">
+            <path
+              d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm8 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zm-13.5.5a.5.5 0 0 0 0-1h-2a.5.5 0 0 0 0 1h2zm11.157-6.157a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm-9.9 2.121a.5.5 0 0 0 .707-.707L3.05 5.343a.5.5 0 1 0-.707.707l1.414 1.414zM8 7a4 4 0 0 0-4 4 .5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5 4 4 0 0 0-4-4zm0 1a3 3 0 0 1 2.959 2.5H5.04A3 3 0 0 1 8 8z">
+            </path>
+          </svg></span><span>KazTravel</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
+        data-bs-target="#navcol-1"><span class="visually-hidden"></span><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link nav-link" href="#about_us">About us</a></li>
+          <li class="nav-item"><a class="nav-link nav-link" href="#how_to_use_our_service">How to use our service?</a></li>
+          <li class="nav-item"><a class="nav-link nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link nav-link" href="#prices">Prices</a></li>
+        </ul>
 
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#about_us" class="nav-link px-2 link-dark" id="el1">About us</a></li>
-                <li><a href="#how_to_use_our_service" class="nav-link px-2 link-dark" id="el2">How to use our service?</a></li>
-                <li><a href="#features" class="nav-link px-2 link-dark" id="el3">Features</a></li>
-                <li><a href="#prices" class="nav-link px-2 link-dark" id="el4">Prices</a></li>
-            </ul>
+        {% if not request.user.is_authenticated%}
+            <a class="btn btn-primary shadow" role="button" href="/register">Sign up</a>
+            {% else %}
+            <a title="My profile" href="/profile"><img style="margin-left: 15px;" src="{{MEDIA_URL}}{{ profile.avatar.url}}" alt="" width="32" height="32" class="rounded-circle me-2"></a>
+            <a title="My profile" href="/profile"><span class="nav-link">{{ request.user }}</span></a>
+            <a class="btn btn-danger shadow" role="button" href="/logout">Log out</a>
+            {% endif %}
 
-            <div class="col-md-3 text-end">
-                <a href="/login/"  class="btn btn-outline-primary me-2">Login</a>
-                <a href="/register/" class="btn btn-primary">Sign-up</a>
-            </div>
-        </header>
+      </div>
     </div>
-</header>
+  </nav>
 
 <section class="main-part color-b" id="about_us">
     <div style="padding-top: 6em;"></div>
@@ -79,13 +89,13 @@
         <h1 class="border-bottom t-white" style="text-align: center;font-family:'Montserrat', sans-serif;font-size:4em;font-weight: bold;padding-bottom: 1em;">KazTravel</h1>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
             <div class="feature col">
-                <img class="image" style="width: 70%; border-radius: 10px" src="{% static "images/pic1.jpg" %}">
+                <img class="image" style="width: 70%; border-radius: 10px" src="{% static 'images/pic1.jpg' %}">
                 <h2 class="t-white mtext" style="margin-top: 5px">Tourism in Kazakhstan</h2>
                 <p class="t-white lead mtext">Due to the abundance of resources and locations, Kazakhstan has developed many types of tourism: entertainment, cultural and educational, environmental, sports, wellness. Tourism in Kazakhstan involves a wide variety of routes.</p>
             </div>
 
             <div class="feature col">
-                <img class="image" style="width: 70%; border-radius: 10px" src="{% static "images/pic3.jpg" %}">
+                <img class="image" style="width: 70%; border-radius: 10px" src="{% static 'images/pic3.jpg' %}">
                 <h2 class="t-white mtext" style="margin-top: 5px">Thanks to our service </h2>
                 <p class="t-white lead mtext">It will be easier for people to learn about interesting places in our vast country</p>
             </div>
@@ -93,7 +103,7 @@
         </div>
 
         <div>
-            <p style="text-align: center"><a href="/filter/" class="btn btn-lg btn-outline-light">Places</a></p>
+            <p style="text-align: center"><a href="/places/" class="btn btn-lg btn-outline-light">Places</a></p>
             <a style="margin-bottom: 5px"></a>
             <p class="t-white lead mdopinfo" style="text-align: center">More information</p>
             <a href="#how_to_use_our_service"><svg class="down mx-auto d-block bounce" width="1em" height="1em" style=""><use xlink:href="#down"/></svg></a>
@@ -219,7 +229,7 @@
                             <li>Reviews</li>
                             <li style="font-weight: bold">and much more...</li>
                         </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                        <a href="/login" class="w-100 btn btn-lg btn-outline-primary" >Sign up for free</a>
                     </div>
                 </div>
             </div>
@@ -229,7 +239,7 @@
                         <h4 class="my-0 fw-normal">Pro</h4>
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$20<small class="lead" style="color: grey">/forever</small> </h1>
+                        <h1 class="card-title pricing-card-title">$5<small class="lead" style="color: grey">/forever</small> </h1>
                         <ul class="list-unstyled mt-3 mb-4">
                             <li>The approximate prices for each place are visible</li>
                             <li>The rating of places is visible</li>
@@ -242,9 +252,8 @@
     </div>
 </section>
 
-<section style="background-image: url('{% static "images/pic4.png" %}'); background-repeat: no-repeat; background-size: cover; padding-bottom: 150px"></section>
-
-
+{% if not request.user.is_authenticated%}
+<section style="background-image: url("{% static 'images/pic4.png' %}"); background-repeat: no-repeat; background-size: cover; padding-bottom: 150px"></section>
 <section>
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
@@ -253,26 +262,26 @@
                 <p class="col-lg-10 fs-4">Go through a simple registration and discover places in Kazakhstan that you may not even have known about!</p>
             </div>
             <div class="col-md-10 mx-auto col-lg-5">
-                <form class="p-4 p-md-5 border rounded-3 bg-light">
+                <form method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+                    {% csrf_token %}
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">
+                        <label for="floatingInput">Username</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
                         <label for="floatingPassword">Password</label>
                     </div>
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
                     <hr class="my-4">
-                    <small class="text-muted">No account? <u>Create</u> an account</small>
+                    <small class="text-muted">No account? <a href="/register"><u>Create</u></a> an account</small>
                 </form>
             </div>
         </div>
     </div>
 </section>
+{% endif %}
 
-
-<!-- Initial version of footer-->
 <footer>
     <nav>
         <a href="#about_us" >About us</a>
@@ -281,21 +290,14 @@
         <a href="#prices"  >Prices</a>
     </nav>
     <div class="logo">
-        <a id="logo" style="font-weight: bold;font-size: 18px">KazTravel</a>
+        <a style="font-weight: bold;font-size: 18px; color: white">KazTravel. 2022</a>
     </div>
-    <div class="social">
-        <ion-icon name="logo-facebook" id="icons"></ion-icon>
-        <ion-icon name="logo-vk" id="icons"></ion-icon>
-        <ion-icon name="logo-instagram" id="icons"></ion-icon>
-        <ion-icon name="logo-google" id="icons"></ion-icon>
-    </div>
-    <p>Travelers. 2022</p>
 </footer>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="{% static "js/main_page.js" %}"></script>
+<script src="{% static 'js/main_page.js' %}"></script>
 </body>
 </html>

@@ -85,6 +85,13 @@ nav ul li {
     animation-fill-mode: forwards;
 }
 
+.hide-search {
+    opacity: 1;
+    animation-name: a1;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
 @keyframes a1 {
     to {
         opacity: 0;

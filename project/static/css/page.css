@@ -1,0 +1,37 @@
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background: #008dff;
+}
+
+.favorites:hover {
+    color: #0066ff;
+    transform: scale(1.15);
+    display: inline;
+}
+
+.favorites {
+    width: 30px;
+    height: 30px;
+}
+
+.favorites-remove:hover {
+    color: #0545a4;
+    transform: scale(1.15);
+    display: inline;
+}
+
+.favorites-remove {
+    color: #0066ff;
+    width: 30px;
+    height: 30px;
+}
+
+.dlt-com:hover {
+    color: #ff1616;
+}
+
+.dlt-com {
+    color: #1f1f1f;
+}

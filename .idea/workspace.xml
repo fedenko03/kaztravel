@@ -2,8 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c669d070-3a7c-4792-8fbe-a4ea82ed49f1" name="Changes" comment="Replenishment of the database. Adding a rating and a small change in the operation of filters">
+      <change afterPath="$PROJECT_DIR$/media/images/avatars/user.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/css/page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/css/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/css/recomendations.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/images/avatars/user.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/static/js/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/place_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/recommendations.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/recovery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templatetags/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/filter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaztravel/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaztravel/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/static/css/filter_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/css/filter_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/static/css/places.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/css/places.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/places.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/filter1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/rating.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/rating.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/token_send.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/token_send.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +45,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -44,14 +76,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Snake_Game_AITU" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\KazTravel\kaztravel\media\images" />
+      <recent name="D:\KazTravel\kaztravel\project\static\images\avatars" />
       <recent name="D:\KazTravel\kaztravel\project\static\images" />
       <recent name="D:\KazTravel\kaztravel\project\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\KazTravel\kaztravel\project\static\images" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -82,7 +119,17 @@
       <workItem from="1652012234656" duration="305000" />
       <workItem from="1652608071231" duration="718000" />
       <workItem from="1652613851638" duration="17000" />
-      <workItem from="1652670335549" duration="26533000" />
+      <workItem from="1652670335549" duration="27629000" />
+      <workItem from="1652762924395" duration="2197000" />
+      <workItem from="1652777545234" duration="635000" />
+      <workItem from="1652783891136" duration="2487000" />
+      <workItem from="1652795329868" duration="9239000" />
+      <workItem from="1652969483219" duration="3006000" />
+      <workItem from="1653035045244" duration="3773000" />
+      <workItem from="1653051845367" duration="12723000" />
+      <workItem from="1653119831639" duration="33334000" />
+      <workItem from="1653186386656" duration="16957000" />
+      <workItem from="1653206189789" duration="15666000" />
     </task>
     <task id="LOCAL-00001" summary="continuing work on the database and the places page">
       <created>1651055924829</created>

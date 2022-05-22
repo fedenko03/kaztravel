@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link href="{% static 'css/page.css' %}" rel="stylesheet" type="text/css">
+     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <title>KazTravel</title>
+<link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-light navbar-expand-md fixed-top navbar-shrink py-3" id="mainNav">
+    <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span
+            class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg
+            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+            class="bi bi-brightness-alt-high">
+            <path
+                    d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm8 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zm-13.5.5a.5.5 0 0 0 0-1h-2a.5.5 0 0 0 0 1h2zm11.157-6.157a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm-9.9 2.121a.5.5 0 0 0 .707-.707L3.05 5.343a.5.5 0 1 0-.707.707l1.414 1.414zM8 7a4 4 0 0 0-4 4 .5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5 4 4 0 0 0-4-4zm0 1a3 3 0 0 1 2.959 2.5H5.04A3 3 0 0 1 8 8z">
+            </path>
+          </svg></span><span>KazTravel</span></a>
+        <button data-bs-toggle="collapse" class="navbar-toggler"
+                data-bs-target="#navcol-1"><span class="visually-hidden"></span><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Main page</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recommendations">Recommendations</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/places">Places</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="/rating">Rating</a></li>
+            </ul>
+           {% if not request.user.is_authenticated%}
+            <a class="btn btn-primary shadow" role="button" href="/register">Sign up</a>
+            {% else %}
+            <a title="My profile" href="/profile"><img style="margin-left: 15px;" src="{{MEDIA_URL}}{{ profile.avatar.url}}" alt="" width="32" height="32" class="rounded-circle me-2"></a>
+            <a title="My profile" href="/profile"><span class="nav-link active">{{ request.user }}</span></a>
+            <a class="btn btn-danger shadow" role="button" href="/logout">Log out</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+
+  <section class="py-5 mt-5">
+    <div class="container">
+      <div class="col-md-8 col-xl-6 text-center mx-auto">
+        <h2 class="fw-bolder text-primary">{{ place.name }}</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <img class="rounded img-fluid shadow" src="{{MEDIA_URL}}{{ place.pic.url}}"
+            style="width: 553px;">
+          <div style="margin-top: 3px;margin-left: 9px;">
+              {% if place.recommend_1 %}
+              <span class="badge bg-success mb-2">We recommend</span>
+              {% endif %}
+              {% if place.recommend_2 %}
+              <span class="badge bg-success mb-2">We recommend</span>
+              {% endif %}
+              <span class="badge bg-primary mb-2">{{ place.city }}</span>
+              <span class="badge bg-primary mb-2">{{ place.type }}</span>
+          </div>
+        </div>
+        <div class="col-md-6" style="width: 657px;">
+          <p class="fw-light text-primary w-lg-50" style="text-align: center;"><strong>Description:</strong></p>
+          <p class="text-muted">{{ place.description }}<br></p>
+          <div>
+              <span style="font-size: 18px;"><strong>Rating:&nbsp;{{rating}}</strong></span>
+              {% if rating >= 1 %}
+              <svg
+              xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+              class="bi bi-star-fill text-warning" style="width: 25px;height: 25px;">
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+              </path>
+            </svg>
+              {% endif %}
+              {% if rating >= 2 %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+              viewBox="0 0 16 16" class="bi bi-star-fill text-warning" style="width: 25px;height: 25px;">
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+              </path>
+            </svg>
+              {% endif %}
+              {% if rating >= 3 %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+              viewBox="0 0 16 16" class="bi bi-star-fill text-warning" style="width: 25px;height: 25px;">
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+              </path>
+            </svg>
+              {% endif %}
+              {% if rating >= 4 %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+              viewBox="0 0 16 16" class="bi bi-star-fill text-warning" style="width: 25px;height: 25px;">
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+              </path>
+            </svg>
+              {% endif %}
+              {% if rating >= 5 %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+              viewBox="0 0 16 16" class="bi bi-star-fill text-warning" style="width: 25px;height: 25px;">
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+              </path>
+            </svg>
+              {% endif %}
+              <span class="fs-4 text-primary float-end" style="padding-right: 13px;padding-top: 3px;">{{ place.price }}</span></div>
+
+
+
+          {% if isfavorites == 0 %}
+           <a href="{% url 'place_favorite' place.id %}" title="Add to Favorites">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         viewBox="0 0 16 16" class="bi bi-bookmark-star-fill favorites"
+                         style="margin-top: 10px;">
+                        <path
+                                d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z">
+                        </path>
+                        <path
+                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z">
+                        </path>
+                    </svg>
+                </a>
+          {% else %}
+                <a href="{% url 'place_favorite' place.id %}" title="Remove from Favorites">
+                    <svg class="bi bi-bookmark-star-fill favorites-remove" xmlns="http://www.w3.org/2000/svg" width="1em"
+                     height="1em" fill="currentColor" viewBox="0 0 16 16"
+                     style="margin-top: 10px;">
+                    <path fill-rule="evenodd"
+                          d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z"></path>
+                    </svg>
+                </a>
+
+          {% endif %}
+
+        </div>
+      </div>
+
+
+      <h4 class="fw-normal text-dark" style="margin-top: 28px;">Comments:</h4>
+
+        <div class="container">
+            {% for i in comments.all %}
+            {% load get_photo from custom_tags %}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="d-flex align-items-center p-3" style="margin-top: 23px;">
+              <img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="{{MEDIA_URL}}{% get_photo i.author %}">
+            <div class="px-2">
+              <p class="fw-bold text-primary mb-0" style="padding-left: 7px;">{{i.author}}
+                  <span class="text-muted" style="padding-left: 8px;">User, {{i.rating}}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-star-fill text-warning" style="width: 20px;height: 20px;margin-top: -4px;padding-left: 0px;">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                </svg>
+              </p>
+              <p class="bg-light border rounded border-light p-4" style="word-break: break-word">{{i.text}}
+                  {% if i.author == request.user %}
+                  <a href="{% url  'delete_com' comment_id=i.id %}" title="Delete a comment">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash dlt-com" style="width: 27px;height: 27px;margin-top: -3px;margin-left: 10px;">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                    </svg>
+                  </a>
+                  {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+            {% endfor %}
+    </div>
+
+
+    </div>
+
+
+    <div class="container" style="margin-top: 28px;">
+      <div class="row">
+        <div class="col-md-6 col-xl-4">
+          <div>
+
+            <form class="p-3 p-xl-4" method="post">
+               {% csrf_token %}
+              <h5 class="fw-bold text-dark" style="margin-top: 2px;text-align: center;">Leave your feedback:</h5>
+              {% if hasCommented %}
+                <div class="alert alert-warning" role="alert"><span style="font-size: 15px;"><strong>You have already left a review about this place. You can delete your comment and write a new one.</strong><br></span></div>
+              {% endif%}
+
+              {% if not hasCommented %}
+                {% for field in form %}
+        {% if field.name != 'rating' %}
+          {{ field }}
+        {% else %}
+              <div style="padding-left: 10px">{{ field.label }}</div>
+           {{ field }}
+        {% endif %}
+              {% endfor %}
+              <div><button class="btn btn-primary shadow d-block w-100" type="submit">Send</button></div>
+            {% endif %}
+            </form>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h6 class="fw-bold text-center text-dark" style="margin-top: 20px;margin-right: 57px;">Recommendations for
+            feedback:</h6>
+          <div class="d-flex flex-wrap flex-md-column justify-content-md-start align-items-md-start h-100"
+            style="margin-top: -27px;">
+            <div class="d-flex align-items-center p-3" style="margin-top: 23px;">
+              <div
+                class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                  class="bi bi-pen-fill">
+                  <path
+                    d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z">
+                  </path>
+                </svg></div>
+              <div class="px-2">
+                <h6 class="fw-bold mb-0">Number of characters</h6>
+                <p class="text-muted mb-0">More than 35 and less than 200</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center p-3">
+              <div
+                class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                  class="bi bi-emoji-heart-eyes-fill">
+                  <path
+                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.559 5.448a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zm-.07-5.448c1.397-.864 3.543 1.838-.953 3.434-3.067-3.554.19-4.858.952-3.434z">
+                  </path>
+                </svg></div>
+              <div class="px-2">
+                <h6 class="fw-bold mb-0">Your opinion</h6>
+                <p class="text-muted mb-0">Describe your first impressions and whether the visit met your expectations
+                </p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center p-3">
+              <div
+                class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                  class="bi bi-star-fill">
+                  <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                  </path>
+                </svg></div>
+              <div class="px-2">
+                <h6 class="fw-bold mb-0">Rate the visit</h6>
+                <p class="text-muted mb-0">Rate the visit on a 5-point scale<br></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer class="bg-primary-gradient">
+    <div class="container py-4 py-lg-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
+                <h3 class="fs-6 fw-bold">Main page</h3>
+                <ul class="list-unstyled">
+                    <li><a href="/#about_us">About us</a></li>
+                    <li><a href="/#how_to_use_our_service">How to use our service?</a></li>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/#prices">Prices</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
+                <h3 class="fs-6 fw-bold">Other</h3>
+                <ul class="list-unstyled">
+                    <li><a href="/filter">Places</a></li>
+                    <li><a href="/rating">Rating</a></li>
+                    <li><a href="/recommendations">Recommendations</a></li>
+                    <li><a href="/profile">My profile</a></li>
+                </ul>
+            </div>
+            <div
+                    class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last item social">
+                <div class="fw-bold d-flex align-items-center mb-2"><span
+                        class="bs-icon-sm bs-icon-circle bs-icon-primary d-flex justify-content-center align-items-center bs-icon me-2"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16"
+                        class="bi bi-brightness-alt-high">
+                <path
+                        d="M8 3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 3zm8 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zm-13.5.5a.5.5 0 0 0 0-1h-2a.5.5 0 0 0 0 1h2zm11.157-6.157a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm-9.9 2.121a.5.5 0 0 0 .707-.707L3.05 5.343a.5.5 0 1 0-.707.707l1.414 1.414zM8 7a4 4 0 0 0-4 4 .5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5 4 4 0 0 0-4-4zm0 1a3 3 0 0 1 2.959 2.5H5.04A3 3 0 0 1 8 8z">
+                </path>
+              </svg></span><span>KazTravel</span></div>
+                <p class="text-muted copyright">Thanks to our service It will be easier for people to learn about
+                    interesting
+                    places in our vast country<br></p>
+            </div>
+        </div>
+        <hr>
+        <div class="text-muted d-flex justify-content-between align-items-center pt-3">
+            <p class="mb-0">Copyright © 2022 KazTravel</p>
+        </div>
+    </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
