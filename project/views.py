@@ -134,7 +134,7 @@ def verify(request, auth_token):
 
 def send_mail_recovery(email, token, nick):
     subject = '[KazTravel] Password Recovery'
-    message = f'{nick}, To restore your password, follow the link: \n\nhttp://127.0.0.1:8000/recovery/{token}\nIf it wasn\'t you, don\'t follow the link!'
+    message = f'{nick}, To restore your password, follow the link: \n\nhttps://kazztravel.herokuapp.com/recovery/{token}\nIf it wasn\'t you, don\'t follow the link!'
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [email]
     send_mail(subject, message, email_from, recipient_list)
@@ -209,7 +209,7 @@ def success(request):
 
 def send_email_after_registration(email, token, nick):
     subject = '[KazTravel] Your accounts need to be verified'
-    message = f'{nick}, please verify your email address! \nTo complete your signup, please verify your email address by clicking on the link below:\n\nhttp://127.0.0.1:8000/verify/{token}\nIf it is not you who have registered, do not follow the link!'
+    message = f'{nick}, please verify your email address! \nTo complete your signup, please verify your email address by clicking on the link below:\n\nhttps://kazztravel.herokuapp.com/verify/{token}\nIf it is not you who have registered, do not follow the link!'
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [email]
     send_mail(subject, message, email_from, recipient_list)

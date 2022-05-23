@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c669d070-3a7c-4792-8fbe-a4ea82ed49f1" name="Changes" comment="* Added password recovery via mail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/recovery.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/recovery.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,7 @@
       <workItem from="1653206189789" duration="23898000" />
       <workItem from="1653238595976" duration="144000" />
       <workItem from="1653271675979" duration="650000" />
-      <workItem from="1653285399895" duration="3958000" />
+      <workItem from="1653285399895" duration="4307000" />
     </task>
     <task id="LOCAL-00001" summary="continuing work on the database and the places page">
       <created>1651055924829</created>
