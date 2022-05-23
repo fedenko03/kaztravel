@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c669d070-3a7c-4792-8fbe-a4ea82ed49f1" name="Changes" comment="Global update:&#10;* We continue to redesign the entire site&#10;* Improving the structuring of the project, code&#10;&#10;* Added a profile page that displays all information about the user&#10;* Added the ability to change the password (on the profile page)&#10;* Added the ability to change firstname and lastname (on the profile page)&#10;* Added a field with an avatar for each user (can be changed on the profile page)&#10;&#10;* Favorites added (each place can be marked)&#10;* All favorites are displayed on the profile page&#10;&#10;* Added comments to each place with a rating&#10;* Added average place rating&#10;* Added a field to search for places via search field&#10;&#10;*  And many other changes and improvements&#10;&#10;** Fixed a lot of bugs">
-      <change afterPath="$PROJECT_DIR$/project/templates/recovery-confirm.html" afterDir="false" />
+    <list default="true" id="c669d070-3a7c-4792-8fbe-a4ea82ed49f1" name="Changes" comment="* Added password recovery via mail">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/static/css/places.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/css/places.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/places.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/places.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/rating.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/rating.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/recovery.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/recovery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaztravel/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaztravel/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +101,10 @@
       <workItem from="1653051845367" duration="12723000" />
       <workItem from="1653119831639" duration="33334000" />
       <workItem from="1653186386656" duration="16957000" />
-      <workItem from="1653206189789" duration="23525000" />
+      <workItem from="1653206189789" duration="23898000" />
+      <workItem from="1653238595976" duration="144000" />
+      <workItem from="1653271675979" duration="650000" />
+      <workItem from="1653285399895" duration="2951000" />
     </task>
     <task id="LOCAL-00001" summary="continuing work on the database and the places page">
       <created>1651055924829</created>
@@ -140,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653222947492</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="* Added password recovery via mail">
+      <created>1653231170919</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653231170920</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +166,7 @@
     <MESSAGE value="." />
     <MESSAGE value="Replenishment of the database. Adding a rating and a small change in the operation of filters" />
     <MESSAGE value="Global update:&#10;* We continue to redesign the entire site&#10;* Improving the structuring of the project, code&#10;&#10;* Added a profile page that displays all information about the user&#10;* Added the ability to change the password (on the profile page)&#10;* Added the ability to change firstname and lastname (on the profile page)&#10;* Added a field with an avatar for each user (can be changed on the profile page)&#10;&#10;* Favorites added (each place can be marked)&#10;* All favorites are displayed on the profile page&#10;&#10;* Added comments to each place with a rating&#10;* Added average place rating&#10;* Added a field to search for places via search field&#10;&#10;*  And many other changes and improvements&#10;&#10;** Fixed a lot of bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Global update:&#10;* We continue to redesign the entire site&#10;* Improving the structuring of the project, code&#10;&#10;* Added a profile page that displays all information about the user&#10;* Added the ability to change the password (on the profile page)&#10;* Added the ability to change firstname and lastname (on the profile page)&#10;* Added a field with an avatar for each user (can be changed on the profile page)&#10;&#10;* Favorites added (each place can be marked)&#10;* All favorites are displayed on the profile page&#10;&#10;* Added comments to each place with a rating&#10;* Added average place rating&#10;* Added a field to search for places via search field&#10;&#10;*  And many other changes and improvements&#10;&#10;** Fixed a lot of bugs" />
+    <MESSAGE value="* Added password recovery via mail" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Added password recovery via mail" />
   </component>
 </project>
