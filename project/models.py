@@ -28,9 +28,21 @@ City = [
     ('Nur-Sultan', 'Nur-Sultan'),
     ('Almaty', 'Almaty'),
     ('Aktobe', 'Aktobe'),
-    ('Almaty obl', 'Almaty obl'),
+    ('Almaty region', 'Almaty region'),
     ('Atyrau', 'Atyrau'),
-    ('Kostanay', 'Kostanay')
+    ('Kostanay', 'Kostanay'),
+    ('Shymkent', 'Shymkent'),
+    ('Akmola region', 'Akmola region'),
+    ('West Kazakhstan region', 'West Kazakhstan region'),
+    ('East Kazakhstan region', 'East Kazakhstan region'),
+    ('Turkestan region', 'Turkestan region'),
+    ('Kostanay', 'Kostanay'),
+    ('Pavlodar', 'Pavlodar'),
+    ('North Kazakhstan region', 'North Kazakhstan region'),
+    ('Mangystau', 'Mangystau'),
+    ('Karaganda', 'Karaganda'),
+    ('Kyzylorda', 'Kyzylorda'),
+    ('Zhambyl region', 'Zhambyl region')
 ]
 
 
