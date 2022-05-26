@@ -37,7 +37,7 @@ SECRET_KEY = 'django-insecure-4455-lmohb(2!ee9js3f(12$u5d%_06&ekdah#0f*1y*ki!)3p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kazztravel.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['migayx.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
