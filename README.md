@@ -1,5 +1,7 @@
 
 # KazTravel
+## Python3.9
+You can test the website here - http://migayx.pythonanywhere.com/
 ## Login and password from the superuser
 Login: admin \
 Password: 1111 \
