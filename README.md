@@ -1,5 +1,6 @@
 
 # KazTravel
+## Python3.9
 ## Login and password from the superuser
 Login: admin \
 Password: 1111 \
