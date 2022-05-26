@@ -28,21 +28,21 @@ City = [
     ('Nur-Sultan', 'Nur-Sultan'),
     ('Almaty', 'Almaty'),
     ('Aktobe', 'Aktobe'),
-    ('Almaty region', 'Almaty region'),
+    ('Almaty⠀region', 'Almaty⠀region'),
     ('Atyrau', 'Atyrau'),
     ('Kostanay', 'Kostanay'),
     ('Shymkent', 'Shymkent'),
-    ('Akmola region', 'Akmola region'),
-    ('West Kazakhstan region', 'West Kazakhstan region'),
-    ('East Kazakhstan region', 'East Kazakhstan region'),
-    ('Turkestan region', 'Turkestan region'),
+    ('Akmola⠀region', 'Akmola⠀region'),
+    ('West⠀Kazakhstan⠀region', 'West⠀Kazakhstan⠀region'),
+    ('East⠀Kazakhstan⠀region', 'East⠀Kazakhstan⠀region'),
+    ('Turkestan⠀region', 'Turkestan⠀region'),
     ('Kostanay', 'Kostanay'),
     ('Pavlodar', 'Pavlodar'),
-    ('North Kazakhstan region', 'North Kazakhstan region'),
+    ('North⠀Kazakhstan⠀region', 'North⠀Kazakhstan⠀region'),
     ('Mangystau', 'Mangystau'),
     ('Karaganda', 'Karaganda'),
     ('Kyzylorda', 'Kyzylorda'),
-    ('Zhambyl region', 'Zhambyl region')
+    ('Zhambyl⠀region', 'Zhambyl⠀region')
 ]
 
 
@@ -56,7 +56,7 @@ class Places(models.Model):
     recommend_1 = models.BooleanField(default=False)
     recommend_2 = models.BooleanField(default=False)
     visits = models.IntegerField(default=0)
-    pic = ImageField(verbose_name='Picture', null=True, blank=True, max_length=100, upload_to='images/places')
+    pic = ImageField(verbose_name='Picture', null=True, blank=True, max_length=100, upload_to='images/places', default='images/places/default_place.png')
 
     def __str__(self):
         return self.name
