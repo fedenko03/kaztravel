@@ -138,11 +138,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'kaztravel@internet.ru'
-EMAIL_HOST_PASSWORD = 'hZzptEs95nBWL4mUXZY1'
+EMAIL_HOST = 'smtp.yandex.com'
+EMAIL_HOST_USER = 'kazztravel@yandex.com'
+EMAIL_HOST_PASSWORD = 'mhjamojpvvtnlnza'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())

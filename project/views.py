@@ -209,7 +209,7 @@ def success(request):
 
 def send_email_after_registration(email, token, nick):
     subject = '[KazTravel] Your accounts need to be verified'
-    message = f'{nick}, please verify your email address! \nTo complete your signup, please verify your email address by clicking on the link below:\n\nmigayx.pythonanywhere.com/verify/{token}\nIf it is not you who have registered, do not follow the link!'
+    message = f'{nick}, please verify your email address! \nTo complete your signup, please verify your email address by clicking on the link below:\n\nhttp://migayx.pythonanywhere.com/verify/{token}\nIf it is not you who have registered, do not follow the link!'
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [email]
     send_mail(subject, message, email_from, recipient_list)
